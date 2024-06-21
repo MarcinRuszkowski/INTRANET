@@ -1,1 +1,1 @@
-Strona do intranetu z nieobecnościami i slide-over bar.
+Strona do intranetu z nieobecnościami i slide-over bar (tailwind).
