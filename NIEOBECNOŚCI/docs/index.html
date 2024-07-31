@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nieobecności Pracownika</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    href=https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    rel="stylesheet">
+    <style>
+      .sidebar {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .sidebar-hidden {
+        transform: translateX(100%);
+      }
+
+      .sidebar-visible {
+        transform: translateX(0);
+      }
+    </style>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="bg-slate-200">
+    <!-- slide-over start-->
+    <div
+      id="sidebar"
+      class="sidebar sidebar-hidden fixed top-0 right-0 h-full w-96 bg-white text-white p-4 shadow overflow-y-auto max-h-screen"
+    >
+      <div class="flex justify-between items-center mb-4 text-black">
+        <button id="closeSidebar" class="text-black">
+          <!-- ml-auto to x on r-side-->
+          &#10005;
+        </button>
+      </div>
+      <!-- sidebar - user -->
+      <div>
+        <div class="sm:flex sm:space-x-5">
+          <div class="flex-shrink-0">
+            <img
+              class="mx-auto h-20 w-20 rounded-full"
+              src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+            />
+          </div>
+          <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+            <p class="text-sm font-medium text-gray-600">
+              Miło Cię znów widzieć
+            </p>
+            <p class="text-xl font-bold text-gray-900 sm:text-2xl">
+              Jan Kowalski
+            </p>
+            <p class="text-sm font-medium text-gray-600">
+              Specjalista ds kowalstwa
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 mb-3 border" />
+
+      <!-- sidebar-feeds -->
+      <span class="font-extrabold text-black text-sm"
+        >Nieobecności pracownika</span
+      >
+      <div class="flow-root mt-3 max-w-xs mx-auto">
+        <ul role="list" class="mb-10">
+          <!-- feed -->
+          <li>
+            <div class="relative pb-8">
+              <span
+                class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+                aria-hidden="true"
+              ></span>
+              <div class="relative flex space-x-3">
+                <div>
+                  <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 ring-8 ring-white"
+                  >
+                    <span class="h-5 w-5 font-semibold text-white text-center"
+                      >U</span
+                    >
+                  </span>
+                </div>
+                <div
+                  class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5"
+                >
+                  <div>
+                    <p class="text-sm text-gray-500">
+                      Urlop wypoczynkowy <span class="font-bold">12</span> dni w
+                      dniach 12-25 czerwca 2024
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- feed -->
+          <li>
+            <div class="relative pb-8">
+              <span
+                class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+                aria-hidden="true"
+              ></span>
+              <div class="relative flex space-x-3">
+                <div>
+                  <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 ring-8 ring-white"
+                  >
+                    <span class="h-5 w-5 font-semibold text-white text-center"
+                      >U</span
+                    >
+                  </span>
+                </div>
+                <div
+                  class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5"
+                >
+                  <div>
+                    <p class="text-sm text-gray-500">
+                      Urlop wypoczynkowy <span class="font-bold">12</span> dni w
+                      dniach 12-25 czerwca 2024
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- feed -->
+          <li>
+            <div class="relative pb-8">
+              <span
+                class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+                aria-hidden="true"
+              ></span>
+              <div class="relative flex space-x-3">
+                <div>
+                  <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-pink-400 ring-8 ring-white"
+                  >
+                    <span class="h-5 w-5 font-semibold text-white text-center"
+                      >L4</span
+                    >
+                  </span>
+                </div>
+                <div
+                  class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5"
+                >
+                  <div>
+                    <p class="text-sm text-gray-500">
+                      Zwolnienie chorobowe <span class="font-bold">12</span> dni
+                      w dniach 12-25 czerwca 2024
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- feed -->
+          <li>
+            <div class="relative pb-8">
+              <span
+                class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+                aria-hidden="true"
+              ></span>
+              <div class="relative flex space-x-3">
+                <div>
+                  <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-600 ring-8 ring-white"
+                  >
+                    <span class="h-5 w-5 font-semibold text-white text-center"
+                      >O</span
+                    >
+                  </span>
+                </div>
+                <div
+                  class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5"
+                >
+                  <div>
+                    <p class="text-sm text-gray-500">
+                      Urlop wypoczynkowy <span class="font-bold">1</span> w
+                      dniach 12 czerwca 2024
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- sidebar-claendar -->
+      <div class="">
+        <div
+          class="mt-10 text-center lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:mt-9 xl:col-start-9"
+        >
+          <div class="flex items-center text-gray-900">
+            <button
+              type="button"
+              class="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+            >
+              <span class="sr-only">Previous month</span>
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="flex-auto text-sm font-semibold">Czerwiec 2024</div>
+            <button
+              type="button"
+              class="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+            >
+              <span class="sr-only">Next month</span>
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 grid grid-cols-7 text-xs leading-6 text-gray-500">
+            <div>M</div>
+            <div>T</div>
+            <div>W</div>
+            <div>T</div>
+            <div>F</div>
+            <div>S</div>
+            <div>S</div>
+          </div>
+          <div
+            class="isolate mt-2 grid grid-cols-7 gap-px rounded-lg bg-gray-200 text-sm shadow ring-1 ring-gray-200"
+          >
+            <button
+              type="button"
+              class="rounded-tl-lg bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2021-12-27"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >27</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2021-12-28"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >28</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2021-12-29"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >29</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2021-12-30"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >30</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2021-12-31"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >31</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-01"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >1</time
+              >
+            </button>
+            <button
+              type="button"
+              class="rounded-tr-lg bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-01"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >2</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-02"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >3</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-04"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-pink-400 font-semibold text-white"
+                >4</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-05"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >5</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-06"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >6</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-07"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >7</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-08"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >8</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-09"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >9</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-10"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >10</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-11"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >11</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-13"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >12</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-13"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >13</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-14"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >14</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-15"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >15</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-16"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >16</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-17"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 font-semibold text-white"
+                >17</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-18"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 font-semibold text-white"
+                >18</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-19"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 font-semibold text-white"
+                >19</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-20"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 font-semibold text-white"
+                >20</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-21"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >21</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-22"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-yellow-600 font-semibold text-white"
+                >22</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-23"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >23</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-24"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >24</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-25"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >25</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-26"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >26</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-27"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >27</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-28"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >28</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-29"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >29</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-30"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >30</time
+              >
+            </button>
+            <button
+              type="button"
+              class="rounded-bl-lg bg-white py-1.5 text-gray-900 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-01-31"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >31</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-02-01"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >1</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-02-02"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >2</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-02-03"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >3</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-02-04"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >4</time
+              >
+            </button>
+            <button
+              type="button"
+              class="bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-02-05"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >5</time
+              >
+            </button>
+            <button
+              type="button"
+              class="rounded-br-lg bg-gray-50 py-1.5 text-gray-400 hover:bg-gray-100 focus:z-10"
+            >
+              <time
+                datetime="2022-02-06"
+                class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                >6</time
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sidebar-claendar ends -->
+    <!-- slide-over ends-->
+    <!-- navigation -->
+    <nav class="flex" aria-label="Breadcrumb">
+      <ol role="list" class="flex items-center space-x-4 mt-12 -mb-10 ml-9">
+        <li>
+          <div class="mr-5">
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <svg
+                class="h-6 w-6 flex-shrink-0"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">Home</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg
+              class="h-6 w-6 flex-shrink-0 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <a
+              href="#"
+              class="ml-7 text-sm font-medium text-gray-500 hover:text-gray-700"
+              >Intranet</a
+            >
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg
+              class="h-6 w-6 flex-shrink-0 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <a
+              href="#"
+              class="ml-7 text-sm font-medium text-gray-500 hover:text-gray-700"
+              aria-current="page"
+              >Urlopy</a
+            >
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- navigation ends -->
+    <!-- Card with avatar and stats -->
+    <div class="rounded-lg bg-white shadow m-9 mt-20 pt-8">
+      <div class="bg-white p-6">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <div class="sm:flex sm:space-x-5">
+            <div class="flex-shrink-0">
+              <img
+                class="mx-auto h-20 w-20 rounded-full"
+                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+              />
+            </div>
+            <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+              <p class="text-sm font-medium text-gray-600">
+                Miło Cię znów widzieć
+              </p>
+              <p class="text-xl font-bold text-gray-900 sm:text-2xl">
+                Jan Kowalski
+              </p>
+              <p class="text-sm font-medium text-gray-600">
+                Specjalista ds kowalstwa
+              </p>
+            </div>
+          </div>
+          <div class="mt-5 flex justify-center sm:mt-0">
+            <button
+              id="toggleSidebar"
+              class="flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-extrabold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            >
+              Szczegóły urlopu
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-1 divide-y divide-gray-200 border-t border-gray-200 bg-gray-50 sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+      >
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <span class="text-gray-600">Pozostało Ci</span>
+          <span class="text-gray-900 font-bold">12</span>
+          <span class="text-gray-600">dni urlopu wypoczynkowego</span>
+        </div>
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <span class="text-gray-600">Przebywałeś</span>
+          <span class="text-gray-900 font-bold">14</span>
+          <span class="text-gray-600"
+            >dni na zwolnieniu chorobowym w tym roku</span
+          >
+        </div>
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <span class="text-gray-600">Przysługuje Ci</span>
+          <span class="text-gray-900 font-bold">2</span>
+          <span class="text-gray-600">dni opieku nad dzieckiem</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card_2 with avatar and stats -->
+    <!-- header -->
+    <div class=" rounded-lg bg-white shadow m-9 pt-8">
+      <div class="bg-white p-6 w">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <div class="sm:flex sm:space-x-5">
+            <div class="flex-shrink-0">
+              <span
+                class="inline-block overflow-hidden rounded-full bg-gray-100 w-20 h-20"
+              >
+                <svg
+                  class="mx-auto h-full w-full rounded-full text-gray-300"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              </span>
+
+              <!--                    <img class="mx-auto h-20 w-20 rounded-full"-->
+              <!--                         src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"-->
+              <!--                         alt="">-->
+            </div>
+            <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+              <p class="text-sm font-medium text-gray-500">
+                Miło Cię znów widzieć
+              </p>
+              <p class="text-xl sm:text-2xl">Wawrzyniec Kuźmicz</p>
+              <p class="text-sm font-medium text-gray-500">
+                Specjalista ds niczego
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- e: header -->
+
+      <!-- actions -->
+      <ul
+        role="list"
+        class="p-6 bg-gray-100 border-0 border-t border-gray-200 bmt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
+      >
+        <!-- element -->
+        <li x-data="{ open: false }" class="relative">
+          <div
+            x-on:click="open = ! open"
+            class="cursor-pointer col-span-1 flex rounded-md shadow-sm"
+          >
+            <div
+              class="flex w-16 flex-shrink-0 items-center justify-center rounded-l-md bg-pink-600 text-sm font-medium text-white"
+            >
+              <img src="images/icon-calendar.svg" alt="" />
+            </div>
+            <div
+              class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white"
+            >
+              <div class="flex-1 truncate px-4 py-2 text-sm">
+                <a
+                  href="#"
+                  class="font-medium text-gray-900 hover:text-gray-600"
+                  >Zgłoś urlop</a
+                >
+                <p class="text-gray-500">Składanie wniosków</p>
+              </div>
+              <div class="flex-shrink-0 pr-2">
+                <button
+                  type="button"
+                  class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-transparent bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <span class="sr-only">Składanie wniosków</span>
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            x-show="open"
+            class="menu absolute top-full w-full p-5 z-50 flex flex-col gap-2 rounded-md bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          >
+            <div class="flex items-center hover:bg-gray-100 p-1">
+              <div
+                class="bg-pink-600 w-12 h-12 rounded-md flex items-center justify-center text-white"
+              >
+                OL
+              </div>
+              <div class="flex-1 items-center pl-4">PTWP On-line</div>
+            </div>
+            <div class="flex items-center hover:bg-gray-100 p-1">
+              <div
+                class="bg-purple-600 w-12 h-12 rounded-md flex items-center justify-center text-white"
+              >
+                OL
+              </div>
+              <div class="flex-1 items-center pl-4">PTWP SA</div>
+            </div>
+            <div class="flex items-center hover:bg-gray-100 p-1">
+              <div
+                class="bg-yellow-400 w-12 h-12 rounded-md flex items-center justify-center text-white"
+              >
+                OL
+              </div>
+              <div class="flex-1 items-center pl-4">PTWP Event Center</div>
+            </div>
+          </div>
+        </li>
+        <!-- e: element -->
+
+        <!-- element -->
+        <li x-data="{ open: false }" class="relative">
+          <div
+            x-on:click="open = ! open"
+            class="cursor-pointer col-span-1 flex rounded-md shadow-sm"
+          >
+            <div
+              class="flex w-16 flex-shrink-0 items-center justify-center rounded-l-md bg-purple-600 text-sm font-medium text-white"
+            >
+              <img src="images/icon-offers.svg" alt="" />
+            </div>
+            <div
+              class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white"
+            >
+              <div class="flex-1 truncate px-4 py-2 text-sm">
+                <a
+                  href="#"
+                  class="font-medium text-gray-900 hover:text-gray-600"
+                  >Dział Sprzedaży i Marketingu</a
+                >
+                <p class="text-gray-500">Zarządzanie sprzedażą</p>
+              </div>
+              <div class="flex-shrink-0 pr-2">
+                <button
+                  type="button"
+                  class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-transparent bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <span class="sr-only">Składanie wniosków</span>
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-show="open"
+            class="absolute top-full w-full p-5 z-10 flex flex-col gap-2 rounded-md bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          >
+            <div class="flex items-center hover:bg-gray-100 p-1">
+              <div
+                class="bg-gray-100 w-12 h-12 rounded-md flex items-center justify-center text-white"
+              >
+                <img src="images/i-v1.svg" alt="" />
+              </div>
+              <div class="flex-1 items-center pl-4">
+                <p class="text-sm font-medium text-gray-600">Oferty</p>
+                <p class="text-sm font-normal text-gray-500">
+                  Generator ofert i zamówień
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center hover:bg-gray-100 p-1">
+              <div
+                class="bg-gray-100 w-12 h-12 rounded-md flex items-center justify-center text-white"
+              >
+                <img src="images/i-v2.svg" alt="" />
+              </div>
+              <div class="flex-1 items-center pl-4">
+                <p class="text-sm font-medium text-gray-600">
+                  Obsługa zamówień
+                </p>
+                <p class="text-sm font-normal text-gray-500">
+                  Uwagi i dane kontaktowe
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center hover:bg-gray-100 p-1">
+              <div
+                class="bg-gray-100 w-12 h-12 rounded-md flex items-center justify-center text-white"
+              >
+                <img src="images/i-v3.svg" alt="" />
+              </div>
+              <div class="flex-1 items-center pl-4">
+                <p class="text-sm font-medium text-gray-600">Aktywności</p>
+                <p class="text-sm font-normal text-gray-500">
+                  Lista moich aktywności
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- e: element -->
+
+        <!-- element -->
+        <li class="col-span-1 flex rounded-md shadow-sm relative">
+          <div
+            class="flex w-16 flex-shrink-0 items-center justify-center rounded-l-md bg-yellow-400 text-sm font-medium text-white"
+          >
+            <img src="images/icon-firm.svg" alt="" />
+          </div>
+          <div
+            class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white"
+          >
+            <a href="" class="flex-1 truncate px-4 py-2 text-sm">
+              <p class="font-medium text-gray-900 hover:text-gray-600">
+                Procedury firmowe
+              </p>
+              <p class="text-gray-500">Lista moich aktywności</p>
+            </a>
+          </div>
+        </li>
+        <!-- e: element -->
+
+        <!-- element -->
+        <li class="col-span-1 flex rounded-md shadow-sm relative">
+          <div
+            class="flex w-16 flex-shrink-0 items-center justify-center rounded-l-md bg-green-500 text-sm font-medium text-white"
+          >
+            <img src="images/icon-holiday.svg" alt="" />
+          </div>
+          <div
+            class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white"
+          >
+            <a href="" class="flex-1 truncate px-4 py-2 text-sm">
+              <p class="font-medium text-gray-900 hover:text-gray-600">
+                Nieobecności
+              </p>
+              <p class="text-gray-500">Sprawdź swój urlop i innych</p>
+            </a>
+          </div>
+        </li>
+        <!-- e: element -->
+      </ul>
+      <!-- e: actions -->
+    </div>
+
+    <!-- Tables With avatars and multi-line content - bar-->
+    <div
+      class="px-4 sm:px-6 lg:px-8 overflow-hidden rounded-lg bg-white shadow m-9 p-8"
+    >
+      <div class="sm:flex flex-col md:flex-row">
+        <div class="w-full mb-4 md:mb-0 md:mr-4">
+          <h1 class="text-base font-extrabold leading-6 text-gray-900">
+            Nieobecności
+          </h1>
+          <p class="mt-2 text-sm text-gray-700">
+            Tutaj sprawdzisz listę nieobecności pracowników Grupy PTWP
+          </p>
+        </div>
+
+        <div class="mb-4 md:mb-0 md:pr-4">
+          <select
+            name="departments"
+            class="rounded-md bg-white pl-3 py-2 text-sm font-extrabold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 w-full md:w-auto"
+          >
+            <option value="department1">-- Wybierz dział --</option>
+            <option value="department2">Dział IT</option>
+            <option value="department3">Dział Marketingu</option>
+            <option value="department4">Dział Księgowości</option>
+          </select>
+        </div>
+
+        <div class="mb-4 md:mb-0 md:pl-4">
+          <select
+            name="months"
+            class="rounded-md bg-white pl-3 py-2 text-sm font-extrabold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 w-full md:w-auto"
+          >
+            <option value="month1">-- Wybierz miesiąc --</option>
+            <option value="month2">Czerwiec 2024</option>
+            <option value="month3">Lipiec 2024</option>
+            <option value="month4">Sierpień 2024</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-8 flow-root">
+        <div
+          class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 whitespace-nowrap"
+        >
+          <div
+            class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
+          >
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead>
+                <tr>
+                  <th
+                    scope="col"
+                    class="py-3.5 pl-4 pr-4 text-left text-sm font-black text-gray-900 sm:pl-0"
+                  >
+                    Imię i nazwisko
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    1
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    2
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    3
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    4
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    5
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    6
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    7
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    8
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    9
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    10
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    11
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    12
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    13
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    14
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    15
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    16
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    17
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    18
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    19
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    20
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    21
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    22
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    23
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    24
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    25
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    26
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    27
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    28
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    29
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-2 py-3.5 text-center text-sm font-bold text-gray-900"
+                  >
+                    30
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <!-- user -->
+                <tr>
+                  <td class="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
+                    <div class="flex items-center">
+                      <div class="h-11 w-11 flex-shrink-0">
+                        <img
+                          class="h-11 w-11 rounded-full"
+                          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                          alt=""
+                        />
+                      </div>
+
+                      <div class="ml-4">
+                        <div class="font-extrabold text-gray-900">
+                          Jan Kowalski
+                        </div>
+                        <div class="mt-1 text-gray-500">
+                          Starszy specjalista ds kowalstwa
+                        </div>
+                      </div>
+                      <!-- bar -->
+
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >1</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >2</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >3</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >4</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >5</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >6</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >7</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >8</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >9</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >10</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >11</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >12</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >13</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >14</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >15</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >16</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                          >17</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                          >18</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                          >19</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                          >20</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                          >21</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                          >22</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                          >23</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                          >24</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                          >25</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >26</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >27</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >28</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >29</span
+                        >
+                      </td>
+                      <td class="text-right">
+                        <span
+                          class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                          >30</span
+                        >
+                      </td>
+                    </div>
+                  </td>
+                  <td class="font-bold w-full">
+                    <!-- user -->
+                    <tr>
+                      <td
+                        class="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0"
+                      >
+                        <div class="flex items-center w-full">
+                          <div class="h-11 w-11 flex-shrink-0">
+                            <img
+                              class="h-11 w-11 rounded-full"
+                              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                              alt=""
+                            />
+                          </div>
+                          <div class="ml-4 flex-grow">
+                            <div class="flex items-center justify-between">
+                              <div>
+                                <div class="font-extrabold text-gray-900">
+                                  Jan Kowalski
+                                </div>
+                                <div class="mt-1 text-gray-500">
+                                  Starszy specjalista ds kowalstwa
+                                </div>
+                              </div>
+                              <!-- bar -->
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >1</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >2</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >3</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >4</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >5</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >6</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >7</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >8</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >9</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >10</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >11</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >12</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >13</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >14</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >15</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >16</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                                  >17</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                                  >18</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                                  >19</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                                  >20</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                                  >21</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                                  >22</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                                  >23</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                                  >24</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                                  >25</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >26</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >27</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >28</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >29</span
+                                >
+                              </td>
+                              <td class="text-center">
+                                <span
+                                  class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                                  >30</span
+                                >
+                              </td>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- user -->
+                    <tr>
+                      <td
+                        class="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0"
+                      >
+                        <div class="flex items-center">
+                          <div class="h-11 w-11 flex-shrink-0">
+                            <img
+                              class="h-11 w-11 rounded-full"
+                              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                              alt=""
+                            />
+                          </div>
+                          <div class="ml-4">
+                            <div class="font-extrabold text-gray-900">
+                              Jan Kowalski
+                            </div>
+                            <div class="mt-1 text-gray-500">
+                              Starszy specjalista ds kowalstwa
+                            </div>
+                          </div>
+                          <!-- bar -->
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >1</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >2</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >3</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >4</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >5</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >6</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >7</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >8</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >9</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >10</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >11</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >12</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >13</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >14</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >15</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >16</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >17</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >18</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >19</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >20</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >21</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >22</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >23</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >24</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >25</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >26</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >27</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >28</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >29</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >30</span
+                            >
+                          </td>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- user -->
+                    <tr>
+                      <td
+                        class="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0"
+                      >
+                        <div class="flex items-center">
+                          <div class="h-11 w-11 flex-shrink-0">
+                            <img
+                              class="h-11 w-11 rounded-full"
+                              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                              alt=""
+                            />
+                          </div>
+                          <div class="ml-4">
+                            <div class="font-extrabold text-gray-900">
+                              Jan Kowalski
+                            </div>
+                            <div class="mt-1 text-gray-500">
+                              Starszy specjalista ds kowalstwa
+                            </div>
+                          </div>
+                          <!-- bar -->
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >1</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >2</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >3</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >4</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >5</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >6</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >7</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >8</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >9</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >10</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >11</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >12</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >13</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >14</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >15</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >16</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                              >17</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                              >18</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                              >19</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-pink-400 font-semibold text-white inline-flex items-center justify-center"
+                              >20</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >21</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >22</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >23</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >24</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-gray-200 font-semibold text-black inline-flex items-center justify-center"
+                              >25</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >26</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >27</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >28</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >29</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="px-1.5 h-7 w-7 rounded-full bg-blue-600 font-semibold text-white inline-flex items-center justify-center"
+                              >30</span
+                            >
+                          </td>
+                        </div>
+                      </td>
+                    </tr>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tables With avatars and multi-line content - progress bar ends-->
+
+    <script src="main.js"></script>
+  </body>
+</html>
