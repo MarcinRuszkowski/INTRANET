@@ -638,14 +638,6 @@ video {
   margin: auto;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
-.m-0 {
-  margin: 0px;
-}
-
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -674,11 +666,6 @@ video {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .-mb-10 {
@@ -781,10 +768,6 @@ video {
   margin-top: 2rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -855,10 +838,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-14 {
-  height: 3.5rem;
 }
 
 .max-h-screen {
@@ -1003,6 +982,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
@@ -1025,10 +1008,6 @@ video {
 
 .gap-px {
   gap: 1px;
-}
-
-.gap-1 {
-  gap: 0.25rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1245,11 +1224,6 @@ video {
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-}
-
 .p-1 {
   padding: 0.25rem;
 }
@@ -1280,14 +1254,6 @@ video {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-1 {
@@ -1410,10 +1376,6 @@ video {
   padding-top: 2rem;
 }
 
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1477,6 +1439,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
 }
 
 .leading-6 {
@@ -1589,11 +1555,6 @@ video {
   transition-duration: 150ms;
 }
 
-.first-letter\:py-2::first-letter {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .hover\:bg-blue-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -1614,9 +1575,9 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-blue-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-500:hover {
@@ -1632,11 +1593,6 @@ video {
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .focus\:z-10:focus {
