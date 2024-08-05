@@ -114,6 +114,7 @@ function openUserFinder() {
   const closeUserFinderBtn = document.querySelector("#close-user-finder-btn");
   const userFinderWindow = document.querySelector("#user-finder-window");
   const bgBhFinder = document.querySelector("#bg-bh-finder");
+  const userFinder = document.querySelector("#user-finder");
 
   openUserFinderBtn.addEventListener("click", () => {
     userFinderWindow.classList.remove("hidden");
@@ -123,6 +124,7 @@ function openUserFinder() {
   closeUserFinderBtn.addEventListener("click", () => {
     userFinderWindow.classList.add("hidden");
     bgBhFinder.classList.remove("brightness-50");
+    userFinder.value = "";
   });
 }
 
@@ -130,7 +132,3 @@ deleteUser();
 checkAllUsers();
 suggestUser();
 openUserFinder();
-
-const userFinderWindow = document.querySelector("#user-finder-window");
-const parentElement = userFinderWindow.parentElement;
-console.log(parentElement);
