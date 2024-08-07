@@ -47,7 +47,7 @@ function suggestUser() {
     "Imie Na zwisko",
     "Imie Na zwisko",
     "Imie Na zwisko",
-    "Imie Na zwisko",
+    "Imie Na zwiskosdfdfsdfsdf",
     "Imie Na zwisko",
     "Imie Na zwisko",
     "Imie Na zwisko",
@@ -67,15 +67,16 @@ function suggestUser() {
       result = avaibleUsers.filter((user) => {
         return user.toLowerCase().includes(input.toLowerCase());
       });
+      displaySuggestions(result);
+    } else {
+      suggestionList.innerHTML = "";
     }
-    displaySuggestions(result);
 
-    // jeśli nie ma takiego użytkownika
-    if (!result.length) {
-      suggestionList.innerHTML = "Brak danego pracownika";
+    // jeśli nie ma dopasowań
+    if (!result.length && input.length) {
+      suggestionList.innerHTML = "Brak dopasowań";
     }
   };
-
   // usuwa podpowiedzi gdy input jest pusty
   userFinder.onfocus = () => {
     if (!userFinder.value.length) {
