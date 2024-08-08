@@ -75,91 +75,298 @@
     </nav>
     <!-- navigation ends -->
     <div class="relative">
+      <!-- --- filter window --- -->
+      <!-- absolute top-5 right-5 -->
+      <div
+        id="filter-display"
+        class="w-72 hidden flex-col bg-white p-5 gap-5 mb-4 rounded-md absolute top-10 right-8 border-2 shadow-xl"
+      >
+        <div class="relative">
+          <img
+            id="filter-close-btn"
+            src="./imgs/close-icon.svg"
+            alt=""
+            class="w-5 h-5 absolute -right-3 -top-3 p-1"
+          />
+        </div>
+        <div class="px-4 pb-6 pt-4">
+          <h3 class="-mx-2 -my-3 flow-root">
+            <!-- Przycisk do rozwijania / zwijania -->
+            <button
+              type="button"
+              class="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400"
+              aria-controls="filter-section-firma"
+              aria-expanded="false"
+              onclick="toggleDropdown(this)"
+            >
+              <span class="font-medium text-gray-900">Firma</span>
+              <span class="ml-6 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 rotate-0 transform"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </h3>
+          <div class="pt-6 hidden" id="filter-section-firma">
+            <div class="space-y-6">
+              <div class="flex items-center">
+                <input
+                  id="filter-firma-1"
+                  name="firma[]"
+                  value="ptwp"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label for="filter-firma-1" class="ml-3 text-sm text-gray-500"
+                  >PTWP</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="filter-firma-2"
+                  name="firma[]"
+                  value="ptwp online"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label for="filter-firma-2" class="ml-3 text-sm text-gray-500"
+                  >PTWP ON-LINE</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="filter-firma-3"
+                  name="firma[]"
+                  value="grupa ptwp"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label for="filter-firma-3" class="ml-3 text-sm text-gray-500"
+                  >GRUPA PTWP</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 px-4 py-6">
+          <h3 class="-mx-2 -my-3 flow-root">
+            <!-- Przycisk do rozwijania / zwijania -->
+            <button
+              type="button"
+              class="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400"
+              aria-controls="filter-section-lokalizacja"
+              aria-expanded="false"
+              onclick="toggleDropdown(this)"
+            >
+              <span class="font-medium text-gray-900">Lokalizacja</span>
+              <span class="ml-6 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 rotate-0 transform"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </h3>
+          <div class="pt-6 hidden" id="filter-section-lokalizacja">
+            <div class="space-y-6">
+              <div class="flex items-center">
+                <input
+                  id="filter-lokalizacja-1"
+                  name="lokalizacja[]"
+                  value="katowice"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label
+                  for="filter-lokalizacja-1"
+                  class="ml-3 text-sm text-gray-500"
+                  >KATOWICE</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="filter-lokalizacja-2"
+                  name="lokalizacja[]"
+                  value="warszawa"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label
+                  for="filter-lokalizacja-2"
+                  class="ml-3 text-sm text-gray-500"
+                  >WARSZAWA</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="filter-lokalizacja-3"
+                  name="lokalizacja[]"
+                  value="białystok"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label
+                  for="filter-lokalizacja-3"
+                  class="ml-3 text-sm text-gray-500"
+                  >BIAŁYSTOK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 px-4 pb-4 pt-6">
+          <h3 class="-mx-2 -my-3 flow-root">
+            <!-- Przycisk do rozwijania / zwijania -->
+            <button
+              type="button"
+              class="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400"
+              aria-controls="filter-section-dział"
+              aria-expanded="false"
+              onclick="toggleDropdown(this)"
+            >
+              <span class="font-medium text-gray-900">Dział</span>
+              <span class="ml-6 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 rotate-0 transform"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </h3>
+          <div class="pt-6 hidden" id="filter-section-dział">
+            <div class="space-y-6">
+              <div class="flex items-center">
+                <input
+                  id="filter-dział-1"
+                  name="dział[]"
+                  value="marketing"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label for="filter-dział-1" class="ml-3 text-sm text-gray-500"
+                  >MARKETING</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="filter-dział-2"
+                  name="dział[]"
+                  value="it"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label for="filter-dział-2" class="ml-3 text-sm text-gray-500"
+                  >IT</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="filter-dział-3"
+                  name="dział[]"
+                  value="organizacja eventów"
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  onchange="updateActiveFilters(this)"
+                />
+                <label for="filter-dział-3" class="ml-3 text-sm text-gray-500"
+                  >ORGANIZACJA EVENTÓW</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="flex flex-col">
+          <p class="text-gray-400">Dział</p>
+          <select name="dział" id="" class="rounded-md border-2 p-1">
+            <option value="" disabled selected>Wybierz</option>
+            <option value="1">IT</option>
+            <option value="2">MARKETING</option>
+            <option value="3">ORGANIZACJI EVENTÓW</option>
+          </select>
+        </div> -->
+
+        <!-- Przycisk do usuwania filtra -->
+        <button
+          class="bg-blue-700 text-white rounded-md p-2 mt-4"
+          onclick="clearFilters(this)"
+        >
+          Usuń filtr
+        </button>
+      </div>
+
+      <!-- --- filter window ends--- -->
       <!-- ---users list--- -->
       <div id="bg-user-details" class="bg-white flex flex-col flex-1">
         <!-- --users header-- -->
-        <div class="flex flex-col border-b-2 w-full p-5">
+        <div class="flex flex-col border-b-2 w-full px-5">
           <!-- input i btn -->
-          <div class="flex gap-2">
+          <div class="flex gap-2 pt-5">
             <input
               class="border-2 rounded-md px-3 flex-1"
               type="search"
               class="rounded"
               placeholder="Imie i nazwisko pracownika"
             />
-            <img src="./imgs/filter-icon.svg" alt="" class="w-9 h-9" />
+            <img
+              id="filter-btn"
+              src="./imgs/filter-icon.svg"
+              alt=""
+              class="w-9 h-9"
+            />
           </div>
           <!-- input i btn end -->
           <!-- filter el -->
-          <div class="flex flex-col md:flex-row gap-2 mt-4">
-            <div
-              class="flex items-center gap-2 bg-green-500 px-2 rounded-md w-max"
+
+          <div id="active-filters" class="flex flex-wrap gap-2 my-2">
+            <!-- <div
+              class="fElement flex items-center gap-2 bg-green-500 px-2 rounded-md w-max"
             >
               <span class="text-white">PTWP ON-LINE</span
               ><img
                 src="./imgs/close-icon.svg"
                 alt=""
-                class="bg-white rounded-md w-3 h-3"
+                class="fElement-delete-btn bg-white rounded-md w-3 h-3"
               />
-            </div>
-            <div
-              class="flex items-center gap-2 bg-green-500 px-2 rounded-md w-max"
-            >
-              <span class="text-white">IT</span
-              ><img
-                src="./imgs/close-icon.svg"
-                alt=""
-                class="bg-white rounded-md w-3 h-3"
-              />
-            </div>
-            <div
-              class="flex items-center gap-2 bg-green-500 px-2 rounded-md w-max"
-            >
-              <span class="text-white">NIEUDACZNIK</span
-              ><img
-                src="./imgs/close-icon.svg"
-                alt=""
-                class="bg-white rounded-md w-3 h-3"
-              />
-            </div>
-            <div
-              class="flex items-center gap-2 bg-green-500 px-2 rounded-md w-max"
-            >
-              <span class="text-white">ZAWÓD RODZINY</span
-              ><img
-                src="./imgs/close-icon.svg"
-                alt=""
-                class="bg-white rounded-md w-3 h-3"
-              />
-            </div>
+            </div> -->
           </div>
           <!-- filter el end -->
         </div>
         <!-- --users header ends-- -->
-        <div
-          class="flex border-b-2 p-5 flex-1 flex-row justify-between items-center"
-        >
-          <div class="flex flex-row gap-2 items-center">
-            <img src="./imgs/user-avatar.svg" alt="" class="w-24 h-24w-24" />
-            <div class="flex flex-col">
-              <p class="font-bold text-xl">Imie Nazwisko</p>
-              <div
-                class="flex flex-col sm:flex-row sm:gap-2 flex-wrap text-gray-400"
-              >
-                <span>Nieudacznik </span>
-                <span class="sm:flex hidden">•</span>
-                <span>Dział Marektingu</span>
-                <span class="sm:flex hidden">•</span>
-                <span>Katowice</span>
-              </div>
-            </div>
-          </div>
-          <img
-            src="./imgs/inside-icon.svg"
-            alt=""
-            class="show-details-btn p-5"
-          />
-        </div>
+
         <div
           class="flex border-b-2 p-5 flex-1 flex-row justify-between items-center"
         >
@@ -339,7 +546,7 @@
           class="hidden bg-white rounded-md min-w-96 flex-col pt-4 relative overflow-x-auto"
         >
           <img
-            id="close-btn"
+            id="detail-close-btn"
             src="./imgs/close-icon.svg"
             alt=""
             class="absolute top-3 right-3"
