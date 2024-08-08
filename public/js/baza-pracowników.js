@@ -54,7 +54,7 @@ function updateActiveFilters(checkbox) {
     // Dodaj filtr do aktywnych filtrów
     const filterElement = document.createElement("div");
     filterElement.className =
-      "fElement flex items-center gap-2 bg-green-500 px-2 rounded-md w-max";
+      "fElement flex items-center gap-2 bg-blue-700 px-2 rounded-md w-max";
     filterElement.innerHTML = `
       <span class="text-white">${checkbox.nextElementSibling.textContent}</span>
       <img src="./imgs/close-icon.svg" alt="Usuń filtr" class="fElement-delete-btn bg-white rounded-md w-3 h-3 cursor-pointer" onclick="removeFilter(this)" />
@@ -103,6 +103,78 @@ function clearFilters() {
   const activeFiltersContainer = document.getElementById("active-filters");
   activeFiltersContainer.innerHTML = "";
 }
+function suggestUser() {
+  let avaibleUsers = [
+    "Imie NazWisko",
+    "Imie Nazzzzwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwiskosdfdfsdfsdf",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Na zwisko",
+    "Imie Nazw i sko",
+  ];
+
+  const suggestionList = document.querySelector("#suggestions-list");
+  const userFinder = document.querySelector("#user-finder");
+
+  // wyszukuje dopasownia liter do nazwy użytkownika
+  userFinder.onkeyup = () => {
+    let result = [];
+    let input = userFinder.value;
+
+    if (input.length) {
+      result = avaibleUsers.filter((user) => {
+        return user.toLowerCase().includes(input.toLowerCase());
+      });
+      displaySuggestions(result);
+    } else {
+      suggestionList.innerHTML = "";
+    }
+
+    // jeśli nie ma dopasowań
+    if (!result.length && input.length) {
+      suggestionList.innerHTML = "Brak dopasowań";
+    }
+  };
+  // usuwa podpowiedzi gdy input jest pusty
+  userFinder.onfocus = () => {
+    if (!userFinder.value.length) {
+      suggestionList.innerHTML = "";
+    }
+  };
+
+  // wyświetla sugestie po wpisaniu litery
+  function displaySuggestions(result) {
+    const content = result
+      .map((list) => {
+        return `
+        <li class="hover:bg-blue-500 flex hover:text-white rounded-md p-3 flex-row gap-1 items-center">
+          <img src="./imgs/user-avatar.svg" alt="" class="w-7 h-7" />
+          <span>${list}</span>
+        </li>`;
+      })
+      .join("");
+    suggestionList.innerHTML = `<ul>${content}</ul>`;
+
+    // wypełnia inputa klikniętym użytkownikiem
+    document.querySelectorAll("#suggestions-list li").forEach((item) => {
+      item.addEventListener("click", () => selectUser(item));
+    });
+  }
+
+  const selectUser = (list) => {
+    userFinder.value = list.querySelector("span").innerText;
+    suggestionList.innerHTML = "";
+  };
+}
 
 showUserDetails();
 openFilterWindow();
+suggestUser();
