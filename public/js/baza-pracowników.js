@@ -103,78 +103,38 @@ function clearFilters() {
   const activeFiltersContainer = document.getElementById("active-filters");
   activeFiltersContainer.innerHTML = "";
 }
+
 function suggestUser() {
-  let avaibleUsers = [
-    "Imie NazWisko",
-    "Imie Nazzzzwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwiskosdfdfsdfsdf",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Na zwisko",
-    "Imie Nazw i sko",
-  ];
+  function showUser() {
+    const searchTerm = document
+      .getElementById("user-finder")
+      .value.toLowerCase();
+    const userDisplays = document.querySelectorAll(".user-liDisplay");
+    const userFinder = document.getElementById("user-finder");
 
-  const suggestionList = document.querySelector("#suggestions-list");
-  const userFinder = document.querySelector("#user-finder");
+    userDisplays.forEach((userDisplay) => {
+      const userName = userDisplay
+        .querySelector(".font-bold")
+        .textContent.toLowerCase();
 
-  // wyszukuje dopasownia liter do nazwy użytkownika
-  userFinder.onkeyup = () => {
-    let result = [];
-    let input = userFinder.value;
+      if (userName.includes(searchTerm) && searchTerm !== "") {
+        userDisplay.classList.remove("hidden");
+        userDisplay.classList.add("flex");
+      } else {
+        userDisplay.classList.add("hidden");
+        userDisplay.classList.remove("flex");
+      }
 
-    if (input.length) {
-      result = avaibleUsers.filter((user) => {
-        return user.toLowerCase().includes(input.toLowerCase());
-      });
-      displaySuggestions(result);
-    } else {
-      suggestionList.innerHTML = "";
-    }
-
-    // jeśli nie ma dopasowań
-    if (!result.length && input.length) {
-      suggestionList.innerHTML = "Brak dopasowań";
-    }
-  };
-  // usuwa podpowiedzi gdy input jest pusty
-  userFinder.onfocus = () => {
-    if (!userFinder.value.length) {
-      suggestionList.innerHTML = "";
-    }
-  };
-
-  // wyświetla sugestie po wpisaniu litery
-  function displaySuggestions(result) {
-    const content = result
-      .map((list) => {
-        return `
-        <li class="hover:bg-blue-500 flex hover:text-white rounded-md p-3 flex-row gap-1 items-center">
-          <img src="./imgs/user-avatar.svg" alt="" class="w-7 h-7" />
-          <span>${list}</span>
-        </li>`;
-      })
-      .join("");
-    suggestionList.innerHTML = `<ul>${content}</ul>`;
-
-    // wypełnia inputa klikniętym użytkownikiem
-    document.querySelectorAll("#suggestions-list li").forEach((item) => {
-      item.addEventListener("click", () => selectUser(item));
+      if (userFinder.value === "") {
+        userDisplay.classList.remove("hidden");
+        userDisplay.classList.add("flex");
+      }
     });
   }
 
-  const selectUser = (list) => {
-    userFinder.value = list.querySelector("span").innerText;
-    suggestionList.innerHTML = "";
-  };
+  document.querySelector("#user-finder").addEventListener("input", showUser);
 }
 
+suggestUser();
 showUserDetails();
 openFilterWindow();
-suggestUser();
