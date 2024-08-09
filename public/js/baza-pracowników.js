@@ -8,6 +8,7 @@ function showUserDetails() {
   showDetailsBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       bg.classList.add("brightness-50");
+      // bg.classList.add("md:w-8/12");
       userDetailsDisplay.classList.add("flex");
       userDetailsDisplay.classList.remove("hidden");
     });
@@ -15,6 +16,7 @@ function showUserDetails() {
 
   closeBtn.addEventListener("click", () => {
     bg.classList.remove("brightness-50");
+    // bg.classList.remove("md:w-8/12");
     userDetailsDisplay.classList.remove("flex");
     userDetailsDisplay.classList.add("hidden");
   });
@@ -48,7 +50,7 @@ function toggleDropdown(button) {
 
 // Funkcja do aktualizowania aktywnych filtrów
 function updateActiveFilters(checkbox) {
-  const activeFiltersContainer = document.getElementById("active-filters");
+  const activeFiltersContainer = document.querySelector("#active-filters");
 
   if (checkbox.checked) {
     // Dodaj filtr do aktywnych filtrów
@@ -56,7 +58,7 @@ function updateActiveFilters(checkbox) {
     filterElement.className =
       "fElement flex items-center gap-2 bg-blue-700 px-2 rounded-md w-max";
     filterElement.innerHTML = `
-      <span class="text-white">${checkbox.nextElementSibling.textContent}</span>
+      <span class="active-filter text-white">${checkbox.nextElementSibling.textContent}</span>
       <img src="./imgs/close-icon.svg" alt="Usuń filtr" class="fElement-delete-btn bg-white rounded-md w-3 h-3 cursor-pointer" onclick="removeFilter(this)" />
     `;
     activeFiltersContainer.appendChild(filterElement);
@@ -100,24 +102,24 @@ function clearFilters() {
   });
 
   // Usuń wszystkie filtry z paska aktywnych filtrów
-  const activeFiltersContainer = document.getElementById("active-filters");
+  const activeFiltersContainer = document.querySelector("#active-filters");
   activeFiltersContainer.innerHTML = "";
 }
 
 function suggestUser() {
   function showUser() {
     const searchTerm = document
-      .getElementById("user-finder")
+      .querySelector("#user-finder")
       .value.toLowerCase();
     const userDisplays = document.querySelectorAll(".user-liDisplay");
-    const userFinder = document.getElementById("user-finder");
+    const userFinder = document.querySelector("#user-finder");
 
     userDisplays.forEach((userDisplay) => {
-      const userName = userDisplay
-        .querySelector(".font-bold")
+      const username = userDisplay
+        .querySelector(".username")
         .textContent.toLowerCase();
 
-      if (userName.includes(searchTerm) && searchTerm !== "") {
+      if (username.includes(searchTerm) && searchTerm !== "") {
         userDisplay.classList.remove("hidden");
         userDisplay.classList.add("flex");
       } else {
@@ -135,6 +137,31 @@ function suggestUser() {
   document.querySelector("#user-finder").addEventListener("input", showUser);
 }
 
-suggestUser();
-showUserDetails();
+// function filterUserByActiveFilters() {
+//   const userDisplays = document.querySelectorAll(".user-liDisplay");
+//   const activeFilters = Array.from(
+//     document.querySelectorAll("span.active-filter")
+//   ).map((span) => span.textContent.trim().toUpperCase());
+
+//   userDisplays.forEach((userDisplay) => {
+//     const userInfo = Array.from(userDisplay.querySelectorAll(".user-info")).map(
+//       (span) => span.textContent.trim().toUpperCase()
+//     );
+
+//     // Sprawdź, czy którykolwiek z aktywnych filtrów pasuje do informacji użytkownika
+//     const matches = activeFilters.some((filter) => userInfo.includes(filter));
+
+//     if (matches) {
+//       userDisplay.classList.add("flex");
+//       userDisplay.classList.remove("hidden");
+//     } else {
+//       userDisplay.classList.remove("flex");
+//       userDisplay.classList.add("hidden");
+//     }
+//   });
+// }
+
 openFilterWindow();
+showUserDetails();
+suggestUser();
+// filterUserByActiveFilters();
