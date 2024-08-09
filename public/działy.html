@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Działy</title>
+    <link
+    href=https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-slate-200">
+    <!-- navigation -->
+    <nav class="flex" aria-label="Breadcrumb">
+      <ol role="list" class="flex items-center space-x-4 mt-12 mb-10 ml-4">
+        <li>
+          <div class="flex items-center">
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-500 hover:text-gray-700"
+              >Intranet</a
+            >
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg
+              class="h-6 w-6 flex-shrink-0 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <a
+              href="#"
+              class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+              aria-current="page"
+              >Struktura Organizacyjna</a
+            >
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg
+              class="h-6 w-6 flex-shrink-0 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <a
+              href="#"
+              class="ml-4 text-sm font-medium text-black"
+              aria-current="page"
+              >Działy</a
+            >
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- navigation ends -->
+    <div class="flex flex-col gap-5">
+      <!-- ----navbar--- -->
+      <div
+        id="departments-navbar"
+        class="flex text-center flex-col bg-white rounded-md h-full flex-1 w-screen md:absolute md:left-0 md:w-1/3 md:text-left"
+      >
+        <a
+          href=""
+          class="font-bold text-xl border-b-2 py-8 mr-8 ml-5 hover:bg-blue-200"
+          >Dział Marketingu</a
+        >
+        <a
+          href=""
+          class="font-bold text-xl border-b-2 py-8 mr-8 ml-5 hover:bg-blue-200"
+          >Dział Organizacji Eventów</a
+        >
+        <a
+          href=""
+          class="font-bold text-xl border-b-2 py-8 mr-8 ml-5 hover:bg-blue-200"
+          >Dział Wsparcia Portali</a
+        >
+        <a
+          href=""
+          class="font-bold text-xl border-b-2 py-8 mr-8 ml-5 hover:bg-blue-200"
+          >Dział Komunikacji</a
+        >
+        <a
+          href=""
+          class="font-bold text-xl border-b-2 py-8 mr-8 ml-5 hover:bg-blue-200"
+          >Studio Graficzne</a
+        >
+        <a
+          href=""
+          class="font-bold text-xl md:border-b-2 py-8 mr-8 ml-5 hover:bg-blue-200"
+          >Dział Księgowości i Kadr</a
+        >
+      </div>
+
+      <!-- ----navbar ends--- -->
+
+      <!-- ---- departments details ---- -->
+      <div
+        class="flex-col bg-white gap-6 px-5 py-12 md:w-3/5 md:rounded-md md:absolute md:right-0"
+      >
+        <p class="font-bold text-3xl">Dział Wsprcia Portali Internetowych</p>
+        <div class="flex flex-col sm:flex-row gap-5 py-5 border-b-2">
+          <a
+            href=""
+            class="department-tab text-blue-700 hover:text-gray-400 cursor-pointer font-medium"
+            >Informacje</a
+          >
+          <a
+            href=""
+            class="department-tab text-gray-500 hover:text-gray-400 cursor-pointer font-medium"
+            >Pliki do pobrania</a
+          >
+          <a
+            href=""
+            class="department-tab text-gray-500 hover:text-gray-400 cursor-pointer font-medium"
+            >Procedury działu</a
+          >
+        </div>
+
+        <p class="font-medium py-5">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, sit
+          numquam illo libero iusto exercitationem inventore fugiat quae fugit,
+          omnis commodi deserunt at quod. Nemo tempora incidunt quos ex aut.
+        </p>
+        <div class="">
+          <p class="font-bold text-lg">Dane adresowe</p>
+          <div class="flex flex-col sm:flex-row text-gray-500 gap-3">
+            <span>Plac Sławika i Antalla 1</span>
+            <span class="sm:flex hidden">•</span>
+            <span>40-163</span>
+            <span class="sm:flex hidden">•</span>
+            <span>Katowice</span>
+            <span class="sm:flex hidden">•</span>
+            <span>2.26 Kostka C</span>
+          </div>
+        </div>
+        <div class="">
+          <p class="font-bold text-lg">Zbiorcze adresy e-mail</p>
+          <div class="flex flex-col sm:flex-row text-gray-500 gap-3">
+            <span class="text-blue-700">kontakt@ptwp.pl</span>
+            <span class="sm:flex hidden">•</span>
+            <span class="text-blue-700"
+              >traffic@ptwp.pl<span class="text-gray-500">
+                (tylko reklamy)</span
+              ></span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <p class="font-bold text-lg">Pracownicy</p>
+          <div class="flex flex-row gap-2 items-center border-b-2 p-5">
+            <img src="./imgs/user-avatar.svg" alt="" class="w-24 h-24w-24" />
+            <div class="flex flex-col">
+              <p class="username font-bold text-xl">Imie Nazwisko</p>
+              <div
+                class="flex flex-col sm:flex-row sm:gap-2 flex-wrap text-gray-400"
+              >
+                <span>Katowice </span>
+                <span class="sm:flex hidden">•</span>
+                <span>32 333 33 33</span>
+                <span class="sm:flex hidden">•</span>
+                <span>imie.nazwisko@ptwp.pl</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row gap-2 items-center border-b-2 p-5">
+            <img src="./imgs/user-avatar.svg" alt="" class="w-24 h-24w-24" />
+            <div class="flex flex-col">
+              <p class="username font-bold text-xl">Imie Nazwisko</p>
+              <div
+                class="flex flex-col sm:flex-row sm:gap-2 flex-wrap text-gray-400"
+              >
+                <span>Katowice </span>
+                <span class="sm:flex hidden">•</span>
+                <span>32 333 33 33</span>
+                <span class="sm:flex hidden">•</span>
+                <span>imie.nazwisko@ptwp.pl</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row gap-2 items-center border-b-2 p-5">
+            <img src="./imgs/user-avatar.svg" alt="" class="w-24 h-24w-24" />
+            <div class="flex flex-col">
+              <p class="username font-bold text-xl">Imie Nazwisko</p>
+              <div
+                class="flex flex-col sm:flex-row sm:gap-2 flex-wrap text-gray-400"
+              >
+                <span>Katowice </span>
+                <span class="sm:flex hidden">•</span>
+                <span>32 333 33 33</span>
+                <span class="sm:flex hidden">•</span>
+                <span>imie.nazwisko@ptwp.pl</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row gap-2 items-center border-b-2 p-5">
+            <img src="./imgs/user-avatar.svg" alt="" class="w-24 h-24w-24" />
+            <div class="flex flex-col">
+              <p class="username font-bold text-xl">Imie Nazwisko</p>
+              <div
+                class="flex flex-col sm:flex-row sm:gap-2 flex-wrap text-gray-400"
+              >
+                <span>Katowice </span>
+                <span class="sm:flex hidden">•</span>
+                <span>32 333 33 33</span>
+                <span class="sm:flex hidden">•</span>
+                <span>imie.nazwisko@ptwp.pl</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row gap-2 items-center border-b-2 p-5">
+            <img src="./imgs/user-avatar.svg" alt="" class="w-24 h-24w-24" />
+            <div class="flex flex-col">
+              <p class="username font-bold text-xl">Imie Nazwisko</p>
+              <div
+                class="flex flex-col sm:flex-row sm:gap-2 flex-wrap text-gray-400"
+              >
+                <span>Katowice </span>
+                <span class="sm:flex hidden">•</span>
+                <span>32 333 33 33</span>
+                <span class="sm:flex hidden">•</span>
+                <span>imie.nazwisko@ptwp.pl</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ---- departments details ends ---- -->
+    </div>
+    <script src="./js/działy.js"></script>
+  </body>
+</html>
